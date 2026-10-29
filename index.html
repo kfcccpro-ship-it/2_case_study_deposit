@@ -340,6 +340,32 @@ a.mvbtn{background:var(--accent);color:#FFFFFF;border-color:var(--accent)}
 .oxref .chip{font-size:max(13px,1.55cqw)}
 .ok{color:var(--ok)}
 @container stage (max-width:760px){.oxq{grid-template-columns:1fr}.oxt{height:70px}}
+
+/* ===== 시인성 · 줄바꿈 · 몰입 액션 ===== */
+.page{text-wrap:pretty}
+.big,.oxs,.oxwt{text-wrap:balance}
+.small{font-size:max(15px,1.62cqw)}
+.tr .small{font-size:max(15px,1.72cqw);color:var(--fg);opacity:.72}
+.body:has(>b.num.hot){font-size:max(19px,2.3cqw);line-height:1.4}
+.wd{animation:wdIn .55s cubic-bezier(.2,.8,.3,1) both;animation-delay:calc(.12s + var(--i) * 85ms)}
+@keyframes wdIn{from{opacity:0;filter:blur(6px)}to{opacity:1;filter:none}}
+.cu{font-variant-numeric:tabular-nums}
+.cuon{color:var(--hot)}
+.scron{display:inline-block;min-width:1ch;text-align:center}
+/* OX 재배치 */
+.oxq{grid-template-columns:.92fr 1.08fr}
+.oxr{gap:1cqw}
+.oxwt{font-size:max(17px,2.05cqw)}
+.oxwd{font-size:max(15px,1.78cqw);color:var(--fg);opacity:.78}
+.oxw{padding:1cqw 1.6cqw}
+.oxend{display:flex;flex-direction:column;gap:.8cqw}
+.oxb{font-size:max(16px,1.85cqw)!important}
+.oxb b{margin-right:.6cqw;font-size:.85em}
+.oxref .chip{font-size:max(14px,1.6cqw)}
+.oxring{position:absolute;border:none!important;inset:-.9cqw;width:calc(100% + 1.8cqw);height:calc(100% + 1.8cqw);overflow:visible;pointer-events:none}
+.oxring ellipse{fill:none;stroke:var(--hot);stroke-width:5;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.3,1) .15s}
+.oxring.in ellipse{stroke-dashoffset:0}
+.fx .oxs u{text-decoration:none;background:linear-gradient(var(--hot),var(--hot)) no-repeat left bottom/0 .22em;animation:uline .7s 1.4s ease-out forwards}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -613,8 +639,8 @@ const R={
  },
 
  story:(d,m)=>{
-  const facts=d.facts.map(f=>`<div class="card"><div class="ico">${ic(f[0])}</div><div><div class="small">${tt(f[1])}</div><div class="big">${f[2]}</div></div></div>`).join("");
-  const chips=d.facts.map(f=>`<span class="chip">${sm(f[0])} ${f[2]}</span>`).join("");
+  const facts=d.facts.map(f=>`<div class="card"><div class="ico">${ic(f[0])}</div><div><div class="small">${tt(f[1])}</div><div class="big">${tt(f[2])}</div></div></div>`).join("");
+  const chips=d.facts.map(f=>`<span class="chip">${sm(f[0])} ${tt(f[2])}</span>`).join("");
   if(m==="chat")return `<div class="split">
     <div class="col" style="justify-content:center"><div class="eyebrow">${d.eyebrow}</div>
       <div class="row" style="align-items:flex-end"><div class="ico" style="width:6cqw;height:6cqw">${ic(d.who[0])}</div><div style="flex:1;min-width:0"><div class="who">${d.who[1]}</div><div class="bubble" data-type="${d.quote}"></div></div></div>
@@ -956,7 +982,7 @@ const OXQ=[{"cat": "대리인", "q": "할머니가 손자 통장과 도장을 <u
 Object.assign(R,{
  ox:(d,m)=>{
   const tot=OXQ.length,ws=d.why.length,last=3+ws;
-  const tile=(v)=>`<div class="oxt ox-${v}" data-s="1">${v==="O"?"O":"X"}${v===d.a?`<span class="oxring" data-s="2"></span>`:`<span class="oxdim" data-s="2"></span>`}</div>`;
+  const tile=(v)=>`<div class="oxt ox-${v}" data-s="1">${v==="O"?"O":"X"}${v===d.a?`<svg class="oxring" data-s="2" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="50" rx="47" ry="45" pathLength="1"/></svg>`:`<span class="oxdim" data-s="2"></span>`}</div>`;
   return `<div class="col enter"><div class="eyebrow">OX 워밍업 · Q${d.n} / ${tot} · ${d.cat}</div></div>
   <div class="oxq">
    <div class="col" style="min-height:0">
@@ -964,16 +990,16 @@ Object.assign(R,{
      <div class="num oxn">Q${d.n}</div>
      ${d.hint?`<div class="small oxh">${d.hint}</div>`:""}
      <div class="big oxs">${d.q}</div>
-     <span class="stamp oxstamp" data-s="2">정답 ${d.a}</span>
+     <span class="stamp oxstamp" data-s="2">정답 <span class="scr" data-v="${d.a}">${d.a}</span></span>
     </div>
     <div class="row oxrow">${tile("O")}${tile("X")}</div>
     <div class="timer" data-s="1" data-sec="10"><span>생각할 시간</span><span class="track"><span class="fill"></span></span><span class="t">0:10</span></div>
    </div>
    <div class="col oxr">
-    <div class="alert big" data-s="2" style="font-size:max(17px,2.07cqw)"><span class="hot">정답 ${d.a}</span> — ${d.one}</div>
+    <div class="alert big" data-s="2" style="font-size:max(17px,2.07cqw)"><span class="hot">정답 <span class="scr" data-v="${d.a}">${d.a}</span></span> — ${d.one}</div>
     ${d.why.map((w,k)=>`<div class="card oxw" data-s="${k+3}"><span class="oxk num">${k+1}</span><div style="min-width:0"><div class="oxwt">${w[0]}</div><div class="oxwd">${w[1]}</div></div></div>`).join("")}
-    <div data-s="${last}"><div class="who">창구 한마디</div><div class="bubble oxb">"${d.ment}"</div></div>
-    <div class="row oxref" data-s="${last}">${d.refs.map(r=>`<span class="chip">방법서 ${r}</span>`).join("")}<span class="small">← 조문을 누르면 원문</span></div>
+    <div class="oxend" data-s="${last}"><div class="bubble oxb"><b class="hot">창구 한마디</b> "${d.ment}"</div>
+     <div class="row oxref">${d.refs.map(r=>`<span class="chip">방법서 ${r}</span>`).join("")}</div></div>
    </div>
   </div>`;
  }
@@ -1030,6 +1056,51 @@ function artKey(dir){const tx=stage.querySelector(".mv .mvtx");if(!tx)return fal
   else{if(st<=2)closeArt();else tx.scrollBy({top:-tx.clientHeight*.8,behavior:"smooth"})}
   return true}
 let idleT;document.addEventListener("mousemove",()=>{document.body.classList.remove("idle");clearTimeout(idleT);idleT=setTimeout(()=>document.body.classList.add("idle"),2500)});
+
+
+/* ===== 몰입 액션: 어절 등장 · 금액 카운트업 · 정답 글자 뒤섞기 (선 그리기는 CSS) ===== */
+function enhance(pg,full){
+  const skip=".ref,.mv,.foot,.prog,.gloss,[data-type],.cu,.scr,.count,svg,style,script";
+  const tw=document.createTreeWalker(pg,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest(skip)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const ns=[];while(tw.nextNode())ns.push(tw.currentNode);
+  const re=/(\d{1,3}(?:,\d{3})+|\d{2,})(?=\s?만?원)/g;
+  ns.forEach(n=>{const t=n.nodeValue;re.lastIndex=0;if(!re.test(t))return;re.lastIndex=0;
+    const f=document.createDocumentFragment();let last=0,m;
+    while((m=re.exec(t))){f.append(t.slice(last,m.index));const sp=document.createElement("span");sp.className="cu";sp.dataset.v=m[1];sp.textContent=m[1];f.append(sp);last=m.index+m[1].length}
+    f.append(t.slice(last));n.replaceWith(f)});
+  if(full)return;
+  pg.querySelectorAll(".h1,.oxs").forEach(h=>{
+    const w=document.createTreeWalker(h,NodeFilter.SHOW_TEXT);const list=[];while(w.nextNode())list.push(w.currentNode);
+    let i=0;
+    list.forEach(n=>{if(n.parentElement.closest(".cu"))return;const parts=n.nodeValue.split(/(\s+)/);if(parts.length<2&&!parts[0].trim())return;
+      const f=document.createDocumentFragment();
+      parts.forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){f.append(p);return}const sp=document.createElement("span");sp.className="wd";sp.textContent=p;f.append(sp)});
+      n.replaceWith(f)});
+    h.querySelectorAll(".wd,.cu").forEach((e,k)=>{e.classList.add("wd");e.style.setProperty("--i",k)});
+  });
+}
+function cuAnim(el){
+  const raw=el.dataset.v,v=+raw.replace(/,/g,""),comma=raw.includes(",");if(!(v>0))return;
+  const fmt=x=>comma?x.toLocaleString("ko-KR"):String(x);const t0=performance.now(),dur=Math.min(1100,500+v/40);
+  el.classList.add("cuon");
+  const step=t=>{if(!el.isConnected)return;const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(v*e));
+    if(k<1)requestAnimationFrame(step);else{el.textContent=raw;el.classList.remove("cuon")}};
+  requestAnimationFrame(step);
+}
+function cuRun(root,initial){root.querySelectorAll(".cu").forEach(el=>{if(initial&&el.closest("[data-s]"))return;cuAnim(el)})}
+function scramble(el){
+  const fin=el.dataset.v,ch="OX?!OX";let k=0;el.classList.add("scron");
+  const id=setInterval(()=>{if(!el.isConnected||++k>14){clearInterval(id);el.textContent=fin;el.classList.remove("scron");return}
+    el.textContent=ch[(Math.random()*ch.length)|0]},55);
+  timers.push(id);
+}
+function actHook(a){
+  if(a.k!=="r")return;
+  a.els.forEach(e=>{
+    (e.matches(".cu")?[e]:[...e.querySelectorAll(".cu")]).forEach(cuAnim);
+    (e.matches(".scr")?[e]:[...e.querySelectorAll(".scr")]).forEach(scramble);
+  });
+}
 
 /* ----- 단계 공개형 연출: 효과 배정 · 집중(이전 항목 흐리게) · 꽃가루 ----- */
 function assignFx(){
@@ -1143,6 +1214,7 @@ function render(full){
   stage.innerHTML=`<div class="page">${body}${glossHTML(S.p,pr.mode)}<div class="prog" id="prog"></div><div class="foot">수신업무 케이스 스터디 · ${sl.foot} · ${S.p+1}/${SLIDES.length}</div></div>`;
   assignFx();
   linkify(stage.querySelector(".page"));
+  enhance(stage.querySelector(".page"),full);
   fit();
   S.acts=buildActs();S.i=0;
   document.getElementById("prog").innerHTML=S.acts.map(()=>"<i></i>").join("");
@@ -1164,6 +1236,7 @@ function render(full){
     stage.querySelectorAll(".count").forEach(el=>countUp(el));
   }
   prog();spot();
+  if(!full)cuRun(stage,true);
 }
 function countUp(el){const to=+el.dataset.to;let v=0;const id=setInterval(()=>{el.textContent=++v;if(v>=to)clearInterval(id)},140);timers.push(id)}
 function typeIt(el,instant){
@@ -1177,7 +1250,7 @@ function finishTyping(){if(!typing.length)return false;typing.forEach(r=>{clearI
 /* ----- 다음 / 이전 : 클리커의 두 버튼만으로 모든 진행 ----- */
 function advance(){
   if(finishTyping())return;
-  if(S.i<S.acts.length){apply(S.acts[S.i],true);fxHook(S.acts[S.i]);S.i++;prog();spot();return}
+  if(S.i<S.acts.length){apply(S.acts[S.i],true);fxHook(S.acts[S.i]);actHook(S.acts[S.i]);S.i++;prog();spot();return}
   if(S.p<SLIDES.length-1){S.p++;render()}
 }
 function back(){
