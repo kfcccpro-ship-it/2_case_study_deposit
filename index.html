@@ -428,11 +428,18 @@ a.mvbtn{background:var(--accent);color:#FFFFFF;border-color:var(--accent)}
 .oxtq{flex-direction:column;align-items:flex-start;gap:1cqw;padding:2.2cqw 2.4cqw}
 .oxtqq{font-weight:700;font-size:max(19px,2.5cqw);line-height:1.4;text-wrap:balance}
 .oxwhere{font-size:max(15px,1.85cqw);color:var(--hot);font-weight:700}
+
+/* ===== 선 아이콘 · 용어(사고 예방형) ===== */
+.eic{display:inline-flex;vertical-align:-.12em;line-height:1;color:var(--accent)}
+.eic svg{width:1em;height:1em}
+.dv-em .eic,.hero .em .eic{color:var(--accent)}
+.gloss i{color:var(--hot);font-style:normal}
+.small.risk{color:var(--hot);opacity:.9;margin-top:.3cqw}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <defs>
-  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></symbol><symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol><symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4 2.5 4H5"/></symbol><symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></symbol><symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-5 9 5"/><path d="M5.5 10v8M10 10v8M14 10v8M18.5 10v8"/><path d="M3 21h18"/></symbol><symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5.5 6.5-5.5s5.5 2 6.5 5.5"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.6c2.4.3 4 2 4.8 4.9"/></symbol><symbol id="i-ban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M6.5 6.5l11 11"/></symbol><symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h15l-3.5-3.5M20 16H5l3.5 3.5"/></symbol><symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
   <symbol id="i-gran" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="9" r="4"/><circle cx="12" cy="3.6" r="1.8"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/><path d="M9.5 9h1.6M12.9 9h1.6"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 3v18M12 8h4M12 11h4"/></symbol>
   <symbol id="i-seal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 3h6v6l2 3H7l2-3z"/><rect x="5" y="12" width="14" height="4" rx="1"/><path d="M6 20h12"/></symbol>
@@ -569,7 +576,7 @@ const P2=[
     <div class="row" data-s="1" style="flex-wrap:wrap"><span class="chip">${ic("book").replace('<svg','<svg width="1.3em" height="1.3em"')} 손자 통장</span><span class="chip">${ic("seal").replace('<svg','<svg width="1.3em" height="1.3em"')} 손자 도장</span><span class="chip">${ic("user").replace('<svg','<svg width="1.3em" height="1.3em"')} ${t("예금주")} = 손자 (22세)</span></div>
   </div>
   <div class="panel">
-    <div class="eyebrow" data-s="2">✋ 손 들어 보세요</div>
+    <div class="eyebrow" data-s="2">여러분의 판단은?</div>
     <div class="big" data-s="2" style="font-size:max(22px,2.99cqw)">통장 + 도장을 들고 왔다면<br>손자가 보낸 것일까?</div>
     <div class="row" data-s="3" style="flex-wrap:wrap"><div class="vote">그렇다</div><div class="vote">아니다</div></div>
     <div class="body" data-s="4">그럼, ${t("위임장")}이 없다면 어떻게?</div>
@@ -696,8 +703,8 @@ const R={
  terms:(d,m)=>{
   const head=`<div class="col enter"><div class="eyebrow">${d.eyebrow}</div><h2 class="h1">${d.title}</h2></div>`;
   if(m==="card")return head+`<div class="row" style="flex:1;min-height:0">${d.items.map(w=>`<div style="flex:1;display:grid">${flip(`<div style="font-size:max(29px,3.91cqw)">${w[1]}</div><div class="big" style="font-size:max(24px,3.45cqw)">${w[0]}</div>`,`<div class="big">${T[w[0]][1]}</div><div class="small">${T[w[0]][2]}</div>`)}</div>`).join("")}</div>`;
-  if(m==="chat")return head+`<div class="grid2 chatgrid" style="flex:1;align-content:center">${d.items.map((w,k)=>`<div class="col" style="gap:.8cqw" data-s="${k+1}"><div class="bubble me" style="align-self:flex-start">"${w[0]}"이 뭐예요?</div><div class="bubble"><b>${w[1]} ${T[w[0]][1]}</b><div class="small" style="margin-top:.4cqw">${T[w[0]][2]}</div></div></div>`).join("")}</div>`;
-  return head+`<div class="col" style="flex:1;justify-content:center">${d.items.map((w,k)=>`<div class="card" data-s="${k+1}"><div style="font-size:max(26px,3.45cqw);width:4cqw;text-align:center">${w[1]}</div><div class="big" style="min-width:9em">${w[0]}</div><div class="body">${T[w[0]][1]}<div class="small">${T[w[0]][2]}</div></div></div>`).join("")}</div>`;
+  if(m==="chat")return head+`<div class="grid2 chatgrid" style="flex:1;align-content:center">${d.items.map((w,k)=>`<div class="col" style="gap:.8cqw" data-s="${k+1}"><div class="bubble me" style="align-self:flex-start">${w[0]} — 정확한 뜻은?</div><div class="bubble"><b>${w[1]} ${T[w[0]][1]}</b><div class="small" style="margin-top:.4cqw">${T[w[0]][2]}</div></div></div>`).join("")}</div>`;
+  return head+`<div class="col" style="flex:1;justify-content:center">${d.items.map((w,k)=>`<div class="card" data-s="${k+1}"><div style="font-size:max(26px,3.45cqw);width:4cqw;text-align:center">${w[1]}</div><div class="big" style="min-width:9em">${w[0]}</div><div class="body">${T[w[0]][1]}<div class="small risk">${T[w[0]][2]}</div></div></div>`).join("")}</div>`;
  },
 
  story:(d,m)=>{
@@ -707,8 +714,8 @@ const R={
     <div class="col" style="justify-content:center"><div class="eyebrow">${d.eyebrow}</div>
       <div class="row" style="align-items:flex-end"><div class="ico" style="width:6cqw;height:6cqw">${ic(d.who[0])}</div><div style="flex:1;min-width:0"><div class="who">${d.who[1]}</div><div class="bubble" data-type="${d.quote}"></div></div></div>
       <div class="row" data-s="1" style="flex-wrap:wrap">${chips}</div></div>
-    <div class="panel"><div class="eyebrow" data-s="2">✋ 손 들어 보세요</div><div class="big" data-s="2" style="font-size:max(22px,2.88cqw)">${tt(d.qs[0])}</div>
-      <div class="row" data-s="3" style="flex-wrap:wrap"><div class="vote">그렇다</div><div class="vote">아니다</div></div>
+    <div class="panel"><div class="eyebrow" data-s="2">처리하겠습니까?</div><div class="big" data-s="2" style="font-size:max(22px,2.88cqw)">${tt(d.qs[0])}</div>
+      <div class="row" data-s="3" style="flex-wrap:wrap"><div class="vote">처리한다</div><div class="vote">보류한다</div></div>
       ${d.qs.slice(1).map((q,k)=>`<div class="body" data-s="${k+4}">${tt(q)}</div>`).join("")}</div></div>`;
   if(m==="card")return `<div class="col enter"><div class="eyebrow">${d.eyebrow}</div><h2 class="h1" style="font-size:max(24px,3.45cqw)">"${d.quote}"</h2></div>
     <div class="row" style="flex-wrap:wrap">${chips}</div>
@@ -846,7 +853,7 @@ const SLIDES=[
  {label:"방법서 읽는 법",foot:"들어가며 · 방법서 읽는 법",render:()=>GUIDE()},
  {label:"도입 질문",foot:"들어가며",render:CUSTOM(0)},
  {label:"케이스 1",foot:"케이스 1",type:"divider",no:"01",em:"🧓",title:"대리인 지급",sub:"예금주 본인이 아닌 사람이 돈을 찾으러 왔다",stories:["스토리 A · 할머니와 손자","스토리 B · 엄마와 미성년 딸"]},
- {label:"1 · 용어",foot:"케이스 1 · 용어",type:"terms",eyebrow:"케이스 1 · 먼저 알아 둘 말",title:"대신 왔어요 — 이 4단어부터",items:[["대리인","🙋"],["위임장","📝"],["인감증명서","🔖"],["법정대리인","👪"]]},
+ {label:"1 · 용어",foot:"케이스 1 · 용어",type:"terms",eyebrow:"케이스 1 · 핵심 용어",title:"대리 지급 — 놓치면 사고가 되는 4가지",items:[["대리인","🙋"],["위임장","📝"],["인감증명서","🔖"],["법정대리인","👪"]]},
  {label:"1 · 스토리 A",foot:"케이스 1 · 스토리 A",render:CUSTOM(1)},
  {label:"1 · 해설 A",foot:"케이스 1 · 해설 A",render:CUSTOM(2)},
  {label:"1 · 스토리 B",foot:"케이스 1 · 스토리 B",type:"story",eyebrow:"케이스 1 · 스토리 B",title:"엄마와 미성년 딸",
@@ -865,7 +872,7 @@ const SLIDES=[
          ["인감·서명 없이 지급","원칙적으로 불가","방법서 제36조"]],
    one:"예금주 본인이 아니면 → 반드시 <u>대리 권한</u>을 확인한다"}
  ,{label:"케이스 2",foot:"케이스 2",type:"divider",no:"02",em:"🔍",title:"멈춰야 할 지급",sub:"서류는 맞는데, 뭔가 이상하다",stories:["A · 인감이 다르다","B · 갑자기 큰돈","C · 통장·도장 분실"]}
- ,{label:"2 · 용어",foot:"케이스 2 · 용어",type:"terms",eyebrow:"케이스 2 · 먼저 알아 둘 말",title:"멈춤과 예외 — 이 4단어부터",items:[["지급제한","🚫"],["편의취급","🤝"],["사고신고","📞"],["신고인감","🔖"]]}
+ ,{label:"2 · 용어",foot:"케이스 2 · 용어",type:"terms",eyebrow:"케이스 2 · 핵심 용어",title:"지급 보류와 예외 — 놓치면 사고가 되는 4가지",items:[["지급제한","🚫"],["편의취급","🤝"],["사고신고","📞"],["신고인감","🔖"]]}
  ,{label:"2 · 스토리 A",foot:"케이스 2 · 스토리 A",type:"story",eyebrow:"케이스 2 · 스토리 A",title:"인감이 다르다",
    quote:"제 예금 1,000만원 전부 해지해 주세요. 도장이 예전에 살짝 깨졌어요. 같은 도장이에요.",who:["user","고객"],
    facts:[["seal","{신고인감}","찍은 도장과 약간 다름"],["user","고객 설명","도장이 깨져서 그래요"],["book","요청","1,000만원 전액 해지"]],
@@ -884,7 +891,7 @@ const SLIDES=[
  ,{label:"2 · 해설 B",foot:"케이스 2 · 해설 B",type:"explain",eyebrow:"해설 B · 수신업무방법서 제37조 7호",
    title:"서류가 다 맞아도, 이상하면 확인한다",lead:"평소 50만원 → 갑자기 5,000만원 = 분명한 이상 거래 (8가지 체크 중 7번)",
    items:[["이유를 묻는다","\"오늘 이 돈 어디에 쓰세요?\" — 조심스럽게, 그러나 꼭","chat"],["수법을 안다","\"경찰·검찰이다\" \"자녀가 사고 났다\" → 현금 인출 유도","siren"],["책임자에게 보고","혼자 판단 X → 지급 지연 · 경찰 신고 검토","user"]],
-   alerts:[["반전","신분증 · 인감이 다 맞아도 '멈출 근거'가 있다 — 제37조 7호"],["말투 팁","\"고객님 돈을 지키려고 여쭤봐요\" — 의심이 아니라 보호"]]}
+   alerts:[["반전","신분증 · 인감이 다 맞아도 '멈출 근거'가 있다 — 제37조 7호"],["응대 포인트","\"고객님 돈을 지키려고 여쭤봐요\" — 의심이 아니라 보호"]]}
  ,{label:"2 · 스토리 C",foot:"케이스 2 · 스토리 C",type:"story",eyebrow:"케이스 2 · 스토리 C",title:"통장과 도장이 없다",
    quote:"통장이랑 도장을 잃어버렸어요. 신분증은 있어요. 오늘 100만원만 찾을 수 있나요?",who:["user","예금주 본인"],
    facts:[["user","방문자","{예금주} 본인"],["book","없는 것","통장 · 도장"],["doc","있는 것","신분증"]],
@@ -899,7 +906,7 @@ const SLIDES=[
    one:"이상하면 → <u>멈추고, 책임자에게</u>"}
 
  ,{label:"케이스 3",foot:"케이스 3",type:"divider",no:"03",em:"🔒",title:"예금담보 · 질권",sub:"담보 잡힌 예금은 마음대로 못 찾는다",stories:["A · 예금 담보 대출","B · 아이 통장을 담보로","C · 대출 다 갚았어요"]}
- ,{label:"3 · 용어",foot:"케이스 3 · 용어",type:"terms",eyebrow:"케이스 3 · 먼저 알아 둘 말",title:"담보의 말 — 누가 잡고, 누가 내주나",items:[["질권","🔒"],["질권자","🏦"],["질권설정자","🙋"],["피담보채권","💳"]]}
+ ,{label:"3 · 용어",foot:"케이스 3 · 용어",type:"terms",eyebrow:"케이스 3 · 핵심 용어",title:"예금담보 — 놓치면 사고가 되는 4가지",items:[["질권","🔒"],["질권자","🏦"],["질권설정자","🙋"],["피담보채권","💳"]]}
  ,{label:"3 · 스토리 A",foot:"케이스 3 · 스토리 A",type:"story",eyebrow:"케이스 3 · 스토리 A",title:"예금을 담보로 대출",
    quote:"제 정기예탁금 5,000만원을 담보로 3,000만원 대출받고 싶어요.",who:["user","고객"],
    facts:[["book","담보로 낼 것","정기예탁금 5,000만원"],["doc","요청","대출 3,000만원"],["user","{질권설정자}","예금주 본인"]],
@@ -933,7 +940,7 @@ const SLIDES=[
    rows:[["예금 담보 질권 설정","인감 + 사고신고 · 중복 질권 확인","방법서 제78조"],["질권 설정 후 지급 요청","질권자 해지 통지 없으면 불가","방법서 제79조"],["미성년 자녀 예금 담보","채무자를 자녀로 하면 이해상반 아님","방법서 제8조 · 민법 제921조"],["질권 해지","질권자 발행 {해지통지서} 필수","방법서 제80조 · 제81조"]],
    one:"담보 잡힌 예금은 → <u>질권자가 풀어 줘야</u> 찾는다"}
  ,{label:"케이스 4",foot:"케이스 4",type:"divider",no:"04",em:"📜",title:"사망 · 상속",sub:"예금주가 돌아가셨다는 사실을 알게 되었다",stories:["A · 사망 소식","B · 상속인 서류","C · 요양원의 유언장"]}
- ,{label:"4 · 용어",foot:"케이스 4 · 용어",type:"terms",eyebrow:"케이스 4 · 먼저 알아 둘 말",title:"상속의 말 — 이 4단어부터",items:[["상속","📜"],["피상속인","🕊️"],["상속인","👪"],["손해담보부약정","✍️"]]}
+ ,{label:"4 · 용어",foot:"케이스 4 · 용어",type:"terms",eyebrow:"케이스 4 · 핵심 용어",title:"사망 · 상속 — 놓치면 사고가 되는 4가지",items:[["상속","📜"],["피상속인","🕊️"],["상속인","👪"],["손해담보부약정","✍️"]]}
  ,{label:"4 · 스토리 A",foot:"케이스 4 · 스토리 A",type:"story",eyebrow:"케이스 4 · 스토리 A",title:"사망 소식",
    quote:"아버지가 어제 갑자기 돌아가셨어요. 아버지 예금이 여기 있는 것 같아서요. 제가 찾을 수 있나요? 아버지 통장이랑 도장 가져왔어요.",who:["user","딸"],
    facts:[["user","{피상속인}","돌아가신 아버지 (예금주)"],["gran","방문자","딸"],["book","가져온 것","아버지 통장 + 도장"]],
@@ -972,7 +979,7 @@ const SLIDES=[
    one:"사망 인지 = 즉시 <u>출금정지</u> · 모든 상속인의 동의 없이는 지급 안 된다"}
 
  ,{label:"케이스 5",foot:"케이스 5",type:"divider",no:"05",em:"⚖️",title:"압류 · 체납처분",sub:"법원·세무서 서류가 창구에 도착했다",stories:["A · 압류명령 도착","B · 추심 vs 전부","C · 세무서에서 왔어요","D · 압류금지 예금"]}
- ,{label:"5 · 용어",foot:"케이스 5 · 용어",type:"terms",eyebrow:"케이스 5 · 먼저 알아 둘 말",title:"압류의 말 — 이 4단어부터",items:[["압류","⛓️"],["추심명령","📥"],["전부명령","🔀"],["체납처분","🏛️"]]}
+ ,{label:"5 · 용어",foot:"케이스 5 · 용어",type:"terms",eyebrow:"케이스 5 · 핵심 용어",title:"압류 — 놓치면 사고가 되는 4가지",items:[["압류","⛓️"],["추심명령","📥"],["전부명령","🔀"],["체납처분","🏛️"]]}
  ,{label:"5 · 스토리 A",foot:"케이스 5 · 스토리 A",type:"story",eyebrow:"케이스 5 · 스토리 A",title:"압류명령 도착",
    quote:"예금주 홍○○, K새마을금고의 '저축예금 500만원'에 대한 압류명령입니다.",who:["doc","법원 서류"],
    facts:[["doc","도착한 것","'저축예금 500만원' {압류}명령"],["book","전산 확인","정기예탁금 500만원 1개뿐"],["warn","불일치","예금 이름이 다름"]],
@@ -1064,7 +1071,7 @@ Object.assign(R,{
  }
 });
 SLIDES.splice(1,0,
- {label:"OX 워밍업",foot:"OX 워밍업",type:"divider",no:"OX",eb:"WARM-UP",em:"⭕",title:"OX 워밍업 — 상식을 의심하라",sub:"상식대로 답하면 틀리는 7문제 · 손으로 O / X를 만들어 보세요",stories:["대리인","편의취급","멈춰야 할 지급","사망·상속","압류"]},
+ {label:"OX 워밍업",foot:"OX 워밍업",type:"divider",no:"OX",eb:"WARM-UP",em:"⭕",title:"OX 워밍업 — 상식을 의심하라",sub:"상식대로 답하면 틀리는 7문제 · O / X로 먼저 판단해 보세요",stories:["대리인","편의취급","멈춰야 할 지급","사망·상속","압류"]},
  ...OXQ.map(d=>({...d,label:"OX Q"+d.n,foot:"OX 워밍업 · Q"+d.n,type:"ox"})),
  {label:"OX 정답 정리",foot:"OX 워밍업 · 정답 정리",type:"table",eyebrow:"OX 워밍업 · 정답 한눈에",title:"상식이 아니라, 방법서가 답이다",cols:["문제","핵심 한 줄","정답","다시 배울 곳"],grid:"1.15fr 2.35fr .45fr 1.05fr",per:1,rows:OXQ.map(d=>["Q"+d.n+" · "+d.cat,d.one,`<b class="num ${d.a==="O"?"ok":"hot"}" style="font-size:1.3em">${d.a}</b>`,`<span class="small">${d.where}</span>`]),alert:["7문제 중 5문제가 X","\"통장·도장이 있으니까\" \"가족이니까\" \"공증받았으니까\" — 상식이 아니라 권한과 절차를 확인한다"]}
 );
@@ -1142,6 +1149,7 @@ let idleT;document.addEventListener("mousemove",()=>{document.body.classList.rem
 
 /* ===== 몰입 액션: 어절 등장 · 금액 카운트업 · 정답 글자 뒤섞기 (선 그리기는 CSS) ===== */
 function enhance(pg,full){
+  deEmoji(pg);
   const skip=".ref,.mv,.foot,.prog,.gloss,[data-type],.cu,.scr,.count,svg,style,script";
   const tw=document.createTreeWalker(pg,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest(skip)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
   const ns=[];while(tw.nextNode())ns.push(tw.currentNode);
@@ -1182,6 +1190,20 @@ function actHook(a){
     (e.matches(".cu")?[e]:[...e.querySelectorAll(".cu")]).forEach(cuAnim);
     (e.matches(".scr")?[e]:[...e.querySelectorAll(".scr")]).forEach(scramble);
   });
+}
+
+
+/* ===== 용어 (사고 예방형) · 이모지 → 선 아이콘 ===== */
+Object.assign(T,{"대리인": ["대리인", "예금주에게서 권한을 위임받아 예금주를 대신해 거래하는 사람", "놓치면 → 권한 없는 사람에게 지급 · 이중지급 책임"], "예금주": ["예금주", "예금계약의 당사자 — 예금을 청구할 권리를 가진 사람", "놓치면 → 통장 소지자를 예금주로 오인해 지급"], "위임장": ["위임장", "예금주가 대리인 · 맡기는 업무 · 범위를 적어 권한을 주는 서면", "놓치면 → 위임 범위를 벗어난 거래까지 처리"], "인감증명서": ["인감증명서", "신고된 인감이 본인 것임을 행정기관이 증명하는 서류 — 3개월 이내 발급분", "놓치면 → 위조 위임장을 걸러내지 못함"], "법정대리인": ["법정대리인", "법률에 따라 대리권을 갖는 사람 — 미성년자는 친권자(부모)", "놓치면 → 관계 확인 없이 부모 청구에 지급"], "친권자": ["친권자", "미성년 자녀의 법정대리권을 행사하는 부모 — 이혼 시 한쪽으로 지정될 수 있음", "놓치면 → 친권 없는 부모에게 지급"], "이해상반행위": ["이해상반행위", "법정대리인에게는 이익, 미성년 자녀에게는 불이익이 되는 행위", "놓치면 → 특별대리인 없이 처리해 거래 효력 문제"], "특별대리인": ["특별대리인", "이해상반행위에서 미성년자를 대리하도록 법원이 선임하는 사람 (민법 제921조)", "놓치면 → 친권자 서명만으로 처리한 거래가 무효 다툼"], "실명확인": ["실명확인", "실명확인증표(주민등록증 · 운전면허증 등)로 거래자가 명의인 본인인지 확인하는 절차", "놓치면 → 명의도용 거래 · 금융실명법 위반"], "편의취급": ["편의취급", "통장 · 인감 없이 지급하는 예외 절차 — 예금주 본인 · 1일 100만원 이하 · 2회", "놓치면 → 대리인 · 한도 초과 지급"], "이중지급": ["이중지급", "무권리자에게 지급한 뒤 진정한 권리자에게 다시 지급해야 하는 사고", "놓치면 → 금고 손실 · 담당자 책임"], "금융사고": ["금융사고", "권한 확인 · 절차 누락으로 금고에 손실이나 신뢰 훼손이 생기는 사고", "놓치면 → 손실 + 감사 지적 · 징계"], "지급제한": ["지급제한", "압류 · 질권 · 사고신고 등으로 지급이 막힌 상태", "놓치면 → 지급할 수 없는 예금을 지급"], "사고신고": ["사고신고", "통장 · 인감 분실 · 도난 등을 알려 거래를 제한하는 신고 (제95조)", "놓치면 → 습득자 · 도용자에게 지급"], "신고인감": ["신고인감", "예금 개설 때 금고에 등록한 인감 — 지급 시 대조 기준", "놓치면 → 인감이 다른 청구에 지급"], "질권": ["질권", "예금을 대출 등 채권의 담보로 잡는 권리", "놓치면 → 질권자 동의 없이 담보 예금 지급"], "질권자": ["질권자", "질권을 가진 채권자 — 대출을 실행한 금융기관 등", "놓치면 → 해지통지 없이 지급해 질권자 손해"], "질권설정자": ["질권설정자", "자기 예금을 담보로 제공한 사람 — 통상 예금주", "놓치면 → 설정자 요청만으로 담보 해제"], "피담보채권": ["피담보채권", "질권으로 담보되는 채권 — 대출 원금 · 이자 등", "놓치면 → 담보 범위를 잘못 판단"], "해지통지서": ["질권 해지통지서", "질권자가 질권 해지를 금고에 알리는 서면 — 상환 영수증과 다름", "놓치면 → 영수증만 보고 지급"], "상속": ["상속", "사망으로 피상속인의 재산과 채무가 상속인에게 포괄 승계되는 것", "놓치면 → 일부 상속인에게 지급해 분쟁"], "피상속인": ["피상속인", "사망으로 재산이 상속되는 사람 — 사망한 예금주", "놓치면 → 사망 인지 후 지급해 면책 불가"], "상속인": ["상속인", "피상속인의 재산을 승계하는 사람 — 배우자 · 자녀 등 법정 순위", "놓치면 → 상속인 범위 확정 없이 지급"], "손해담보부약정": ["손해담보부약정", "지급 후 분쟁이 생기면 상속인이 책임진다는 약정 — 상속예금 지급 시 징구", "놓치면 → 분쟁 시 금고가 단독 부담"], "대표상속인": ["대표상속인", "상속인 전원이 연서해 지급을 맡기기로 지정한 상속인 (제111조 ③)", "놓치면 → 일부 상속인 단독 청구에 지급"], "출금정지": ["출금정지", "전산원장에 등록해 해당 예금의 출금을 막는 조치", "놓치면 → 사망 · 압류 뒤에도 출금 발생"], "압류": ["압류", "법원 · 세무서가 채무자의 예금 처분과 지급을 금지하는 조치", "놓치면 → 압류 뒤 지급해 이중지급 책임"], "추심명령": ["추심명령", "압류채권자가 예금을 직접 받아 갈 수 있게 하는 법원 명령 — 송달 즉시 효력", "놓치면 → 경합 확인 없이 지급"], "전부명령": ["전부명령", "예금채권을 압류채권자에게 넘기는 법원 명령 — 확정되어야 효력", "놓치면 → 확정증명원 없이 지급"], "체납처분": ["체납처분", "세금 체납 시 세무서 등이 재산을 압류하는 절차 (국세징수법)", "놓치면 → 민사 압류와 경합 판단 착오"], "확정증명원": ["확정증명원", "전부명령 등이 확정되었음을 법원이 증명하는 서류", "놓치면 → 확정 전 명령에 지급"], "가압류": ["가압류", "본압류 전 채권 보전을 위해 예금 지급을 임시로 막는 조치", "놓치면 → 가압류 예금을 예금주에게 지급"]});
+const EMO={"🧓": "user", "🔍": "search", "🔒": "lock", "📜": "doc", "⚖️": "scale", "⚖": "scale", "⚠️": "warn", "🙋": "user", "🔖": "seal", "👪": "users", "🤔": "chat", "💡": "check", "🎯": "target", "📋": "doc", "💬": "chat", "✅": "check", "📝": "doc", "🚫": "ban", "🤝": "hand", "📞": "phone", "🏦": "bank", "💳": "card", "🕊️": "user", "✍️": "seal", "⛓️": "lock", "📥": "hand", "🔀": "swap", "🏛️": "bank", "🏁": "flag", "⭕": "check", "✋": "hand"};
+const EMORE=new RegExp(Object.keys(EMO).sort((a,b)=>b.length-a.length).map(k=>k.replace(/️/g,"")+"\\uFE0F?").join("|"),"g");
+function deEmoji(pg){
+  const tw=document.createTreeWalker(pg,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest("[data-type],.mv,svg")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const ns=[];while(tw.nextNode())ns.push(tw.currentNode);
+  ns.forEach(n=>{const t=n.nodeValue;EMORE.lastIndex=0;if(!EMORE.test(t))return;EMORE.lastIndex=0;
+    const sp=document.createElement("span");
+    sp.innerHTML=esc(t).replace(EMORE,m=>{const k=EMO[m]||EMO[m.replace(/️/g,"")]||EMO[m+"️"];return k?`<span class="eic">${ic(k)}</span>`:m});
+    n.replaceWith(...sp.childNodes)});
 }
 
 /* ----- 단계 공개형 연출: 효과 배정 · 집중(이전 항목 흐리게) · 꽃가루 ----- */
